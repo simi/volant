@@ -17,7 +17,7 @@
 #
 
 require 'rexml/document'
-
+require 'lib/alerts'
 
 # TODO - set new AF fee smartly
 class ApplyForm < ActiveRecord::Base
@@ -27,7 +27,7 @@ class ApplyForm < ActiveRecord::Base
   enforce_schema_rules
   create_date_time_accessors
 
-  named_scope :year, lambda { |year|
+  scope :year, lambda { |year|
     year = year.to_i
     sql = '(created_at >= ? AND created_at < ?)'
     { :conditions => [ sql, Date.new(year,1,1), Date.new(year + 1,1,1) ] }

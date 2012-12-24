@@ -23,7 +23,7 @@ class ApplyFormMail
     begin
       @to = ENV['all_mails_to'] if ENV.has_key?('all_mails_to')
       @from = ENV['all_mails_to'] if ENV.has_key?('all_mails_to')
-      GenericMailer.deliver_plain_email(self)
+      GenericMailer.plain_email(self).self
     rescue => error
       RAILS_DEFAULT_LOGGER.error error.backtrace.join("\n")
       raise DeliveryFailure.new(error.message)

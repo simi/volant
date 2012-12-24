@@ -10,9 +10,9 @@ class ApplicationController < VisibilityController
 
   ActiveScaffold.set_defaults do |config|
     #  config.list.empty_field_text = I18n.add('add')
-    config.show.link.label = Helper.instance.icon('show', I18n.t('show'), true)
-    config.update.link.label = Helper.instance.icon('update', I18n.t('update'), true) if config.actions.include?(:update)
-    config.delete.link.label = Helper.instance.icon('delete', I18n.t('delete'), true) if config.actions.include?(:delete)
+    config.show.link.label = helpers.icon('show', I18n.t('show'), true)
+    config.update.link.label = helpers.icon('update', I18n.t('update'), true) if config.actions.include?(:update)
+    config.delete.link.label = helpers.icon('delete', I18n.t('delete'), true) if config.actions.include?(:delete)
   end
 
 

@@ -1,8 +1,10 @@
 module ApplicationHelper
+  include ActionView::Helpers::AssetTagHelper
 
   def icon( key, label = nil, hint_only = false)
     label ||=  I18n.translate(key)
     alt = label || key
+    alt = "ryba"
     tag = image_tag( "/images/icons/#{key}.png", :class => "icon", :alt => alt, :title => alt)
     tag += "#{label}" if label and not hint_only
     tag

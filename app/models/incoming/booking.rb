@@ -17,8 +17,8 @@ class Incoming::Booking < ActiveRecord::Base
   belongs_to :country
   validates_presence_of :gender
 
-  named_scope :females, :conditions => {:gender => Person::FEMALE }
-  named_scope :males, :conditions => {:gender => Person::MALE }
+  scope :females, :conditions => {:gender => Person::FEMALE }
+  scope :males, :conditions => {:gender => Person::MALE }
 
 
   def male?

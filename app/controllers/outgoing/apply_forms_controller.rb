@@ -1,4 +1,3 @@
-require "#{RAILS_ROOT}/vendor/plugins/active_scaffold/lib/paginator"
 require "#{RAILS_ROOT}/app/models/outgoing/workcamp_assignment"
 require "#{RAILS_ROOT}/app/models/outgoing/workcamp"
 

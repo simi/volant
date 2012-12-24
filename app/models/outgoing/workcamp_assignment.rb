@@ -26,7 +26,7 @@ module Outgoing
     belongs_to :workcamp, :class_name => 'Outgoing::Workcamp'
     validates_presence_of :workcamp
 
-    named_scope :not_rejected, :conditions => [ 'rejected IS NULL']
+    scope :not_rejected, :conditions => [ 'rejected IS NULL']
 
     [ "accept", "reject", "ask", "infosheet" ].each do |action|
       eval %{
